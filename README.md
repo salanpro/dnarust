@@ -13,6 +13,8 @@ A library for genomics
 ### Proteins
 - [ ] Calculate molecular weight of the protein
 - [ ] Isoelectric point (pI)
+- [ ] Find synonymous codons for each amino acid
+- [ ] Generate silent mutations (synonymous codon substitutions)
 
 ### Primers designing
 - [ ] Optimal melting temperature (Tm)
