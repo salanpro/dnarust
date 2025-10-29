@@ -5,6 +5,7 @@ fn main (){
 
     let promax = proteins::Protein::new("TYA");
 
-    println!("{}", promax.len())
+    println!("{}", promax.len());
+    println!("{:?}", promax.fromone());
 
 }

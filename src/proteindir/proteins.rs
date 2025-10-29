@@ -1,3 +1,6 @@
+use crate::aminoacidsdir::amino::Aminoacid;
+use crate::dnadir::dna_to_prot;
+
 pub struct Protein{
     pub seq: String
 }
@@ -13,6 +16,10 @@ impl Protein {
 
     pub fn is_empty(&self) -> bool{
         self.seq.is_empty()
-
+    
     }
+    pub fn fromone(&self) -> Vec<Aminoacid>{
+    dna_to_prot::from_one_to_three(&self.seq)
+    }
+
 }
