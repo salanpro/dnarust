@@ -7,7 +7,7 @@ A library for genomics
 - [x] Convert DNA to mRNA
 - [x] Calculate GC content
 - [x] Translate DNA to polypeptide chain with **full amino acid names** (e.g., Ala, Arg, Asn)
-- [ ] Translate DNA to polypeptide chain with **single-letter amino acid codes** (e.g., A, R, N)
+- [x] Translate DNA to polypeptide chain with **single-letter amino acid codes** (e.g., A, R, N)
 - [ ] Convert between single-letter and three-letter amino acid codes
 ## To do list ???
 ### Proteins
