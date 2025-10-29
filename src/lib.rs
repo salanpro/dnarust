@@ -1,3 +1,3 @@
-pub mod seq;
-pub mod prot;
+pub mod dnadir;
+pub mod proteindir;
 
