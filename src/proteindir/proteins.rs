@@ -1,16 +1,16 @@
-use crate::aminoacidsdir::amino::Aminoacid;
-use crate::dnadir::dna_to_prot;
+use crate::aminoacidsdir::{amino::Aminoacid};
 
 pub struct Protein{
     pub seq: String
 }
+
 
 impl Protein {
     pub fn new(seq: impl Into<String>) -> Self {
         Self { seq: seq.into() }
     }
 
-    pub fn len(&self) -> usize {
+    pub fn lenght(&self) -> usize {
         self.seq.len()
     }
 
@@ -18,8 +18,11 @@ impl Protein {
         self.seq.is_empty()
     
     }
-    pub fn fromone(&self) -> Vec<Aminoacid>{
-    dna_to_prot::from_one_to_three(&self.seq)
+
+    pub fn from_string_to_vector(&self) -> Vec<Aminoacid>{
+    self.seq.chars().filter_map(|c| Aminoacid::from_one_letter(c)).collect()
+}
+
     }
 
-}
+
