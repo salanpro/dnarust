@@ -9,7 +9,7 @@ impl Aminoacid {
     }
 }
 
-pub fn polypeptide_chainf(seq: &str) -> Vec<Aminoacid> {
+pub fn polypeptide_chain(seq: &str) -> Vec<Aminoacid> {
     let mut amino_chainf = Vec::with_capacity(seq.len());
 
     for codon in seq.as_bytes().chunks(3) {
@@ -29,40 +29,34 @@ pub fn polypeptide_chainf(seq: &str) -> Vec<Aminoacid> {
 }
 
 
-pub fn polypeptide_chains(seq: &str) -> String {
-    polypeptide_chainf(seq)
+pub fn polypeptide_chain_single(seq: &str) -> String {
+    polypeptide_chain(seq)
         .iter()
         .map(|aa| aa.to_one_letter())
         .collect()
 }
 
-pub fn translatefstring(seq: &str) -> String {
-    polypeptide_chainf(seq)
+pub fn polypeptide_chain_three(seq: &str) -> String {
+    polypeptide_chain(seq)
         .iter()
         .map(|aa| format!("{:?}", aa)) 
         .collect::<Vec<String>>()
         .join("-") 
 }
 
-pub fn from_one_to_three(protein: &str) -> Vec<Aminoacid>{
-    protein.chars().filter_map(|c| Aminoacid::from_one_letter(c)).collect()
-}
-
 
 
 
 impl Sequence {
-    pub fn translatef(&self) -> Vec<Aminoacid> {
-        polypeptide_chainf(&self.mrna())
+    pub fn translate_as_vector(&self) -> Vec<Aminoacid> {
+        polypeptide_chain(&self.mrna())
     }
 
-    pub fn translates(&self) -> String{
-        polypeptide_chains(&self.mrna())
+    pub fn translate_as_string(&self) -> String{
+        polypeptide_chain_single(&self.mrna())
     }
-    pub fn translatefstring(&self) -> String {
-        translatefstring(&self.mrna())
+    pub fn translate_as_string3(&self) -> String {
+        polypeptide_chain_three(&self.mrna())
     }
-
-        
     
 }

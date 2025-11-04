@@ -7,7 +7,7 @@ impl Sequence {
         Self { seq: seq.into() }
     }
 
-    pub fn len(&self) -> usize {
+    pub fn lenght(&self) -> usize {
         self.seq.len()
     }
 
