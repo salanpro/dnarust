@@ -4,7 +4,7 @@
 A personal project which consists in a basic library for genomics and bioinformatics
 
 ## Features
-See [To-do list](https://github.com/salanpro/dnarust/edit/main/README.md#to-do-list) for current and futures features.
+See [To-do list](https://github.com/salanpro/dnarust/tree/main?tab=readme-ov-file#to-do-list) for current and futures features.
 
 ## 1. DNA
 ```rust
