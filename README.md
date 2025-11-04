@@ -11,7 +11,7 @@ A library for genomics
 - [x] Convert between single-letter and three-letter amino acid codes
 ## To do list ???
 ### Proteins
-- [ ] Calculate molecular weight of the protein
+- [x] Calculate molecular weight of the protein
 - [ ] Isoelectric point (pI)
 - [ ] Find synonymous codons for each amino acid
 - [ ] Generate silent mutations (synonymous codon substitutions)
