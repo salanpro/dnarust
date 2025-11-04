@@ -1,6 +1,7 @@
 use phf::phf_map;
 
 
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Aminoacid {
     Ala, Arg, Asn, Asp, Cys, Gln, Glu, Gly, His,
