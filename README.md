@@ -76,3 +76,4 @@ let protein = proteins::Protein::new("ACDEFGHIKLMNPQRSTVWY");
 - [ ] Writing FASTA files
 
 # Documentation
+See [Documentation](./DOCUMENTATION.md)
