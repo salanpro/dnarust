@@ -2,9 +2,9 @@ use biorust::io::fasta;
 
 fn main() -> std::io::Result<()> {
 
-    let record1 = fasta::read_records("/home/salan/Desktop/fastatest/test.fasta")?;
-    let record2 = fasta::read_records("/home/salan/Desktop/fastatest/test2.fasta")?;
-    let records = fasta::read_records("/home/salan/Desktop/fastatest/testd.fasta")?;
+    let record1 = fasta::read_records("PATH TO FASTA FILE")?;
+    let record2 = fasta::read_records("PATH TO FASTA FILE")?;
+    let records = fasta::read_records("PATH TO FASTA FILE")?;
 
 
     for record in &record2 {
