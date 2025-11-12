@@ -72,8 +72,8 @@ let protein = proteins::Protein::new("ACDEFGHIKLMNPQRSTVWY");
 - [ ] 40 < GC% < 60
 
 #### FASTA
-- [ ] Reading FASTA files
-- [ ] Writing FASTA files
+- [x] Reading FASTA files
+- [x] Writing FASTA files
 
 # Documentation
 See [Documentation](./DOCUMENTATION.md)
