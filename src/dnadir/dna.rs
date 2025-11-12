@@ -1,5 +1,15 @@
+use std::fmt;
+
+#[derive(Debug, Clone)]
 pub struct Sequence {
     pub seq: String,
+}
+
+
+impl fmt::Display for Sequence {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{}", self.seq)
+    }
 }
 
 impl Sequence {
