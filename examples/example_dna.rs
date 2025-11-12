@@ -8,8 +8,8 @@ fn main() {
     println!("{}", seq.mrna());
     println!("{}", seq.gc_content());
     println!("{:?}", seq.translate_as_vector());
-    println!("{:?}", seq.translate_as_string());
-    println!("{:?}", seq.translate_as_string3());
+    println!("{}", seq.translate_as_string());
+    println!("{}", seq.translate_as_string3());
     
 }
 
