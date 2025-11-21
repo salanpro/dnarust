@@ -38,7 +38,7 @@ impl Protein {
             .iter()
             .map(|amino| molecular_weight(*amino))
             .sum();
-        return fsum - (self.lenght() as f64 - 1.) * 18.015
+        fsum - (self.lenght() as f64 - 1.) * 18.015
     }
 
 }
