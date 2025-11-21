@@ -49,14 +49,13 @@ pub fn polypeptide_chain_three(seq: &str) -> String {
 
 impl Sequence {
     pub fn translate_as_vector(&self) -> Vec<Aminoacid> {
-        polypeptide_chain(&self.mrna())
+        polypeptide_chain(&self.to_rna())
     }
-
     pub fn translate_as_string(&self) -> String{
-        polypeptide_chain_single(&self.mrna())
+        polypeptide_chain_single(&self.to_rna())
     }
     pub fn translate_as_string3(&self) -> String {
-        polypeptide_chain_three(&self.mrna())
+        polypeptide_chain_three(&self.to_rna())
     }
     
 }
