@@ -45,7 +45,7 @@ impl FastaRecord {
     }
 
     pub fn mrna(&self) -> String {
-        dna::Sequence::mrna(&self.sequence)
+        dna::Sequence::to_rna(&self.sequence)
     }
 
     pub fn gc_content(&self) -> f32 {
