@@ -11,25 +11,34 @@ See [To-do list](#to-do-list) for current and futures features.
 
 ## 1. DNA
 ```rust
-let seq = dna::Sequence::new("ACGTATAC");
-    println!("{}", seq.lenght()); //Lenght of the DNA chain
-    println!("{}", seq.reverse_complement()); //Reverse complement
-    println!("{}", seq.complement()); //Complement
-    println!("{}", seq.mrna()); //Transcription to mRNA
-    println!("{}", seq.gc_content()); //Content of G & C
-    println!("{:?}", seq.translate_as_vector()); //Translate the DNA as a vector of aminoacids using 3-letter-code
-    println!("{}", seq.translate_as_string()); //Translate the DNA as a string of aminoacids using 1-letter-code
-    println!("{}", seq.translate_as_string3()); //Translate the DNA as a string of aminoacids using 3-letter-code
+use biorust::dnadir::dna;
+
+fn main() {
+    let seq = dna::Sequence::new("ACGTATAC");
+    
+    println!("Seq: {}", seq);
+    println!("Lenght: {}", seq.lenght());
+    println!("Complement: {}", seq.complement());
+    println!("Reverse complement: {}", seq.reverse_complement());
+    println!("Rna: {}", seq.to_rna());
+    println!("Reverse Rna: {}", seq.to_reverse_rna());
+    println!("GC %: {}", seq.gc_content());
+    println!("Translation: {}", seq.translate_as_string());
+    println!("{:?}", seq.translate_as_vector());
+    println!("{}", seq.translate_as_string3());
+}
 ```
 > #### Output
 > ```bash
-> 8
->GTATACGT
->TGCATATG
->ACGUAUAC
->37.5
+>Seq: ACGTATAC
+>Lenght: 8
+>Complement: TGCATATG
+>Reverse complement: GTATACGT
+>Rna: ACGUAUAC
+>Reverse Rna: CAUAUGCA
+>GC %: 37.5
+>Translation: TY
 >[Thr, Tyr]
->TY
 >Thr-Tyr
 > ```
 
