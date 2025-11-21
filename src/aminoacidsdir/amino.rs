@@ -10,7 +10,8 @@ pub enum Aminoacid {
 }
 pub static CODON_TABLE: phf::Map<&'static str, Aminoacid> = phf_map! {
     "UUU" => Aminoacid::Phe, "UUC" => Aminoacid::Phe,
-    "UUA" => Aminoacid::Leu, "UUG" => Aminoacid::Leu,
+    "UUA" => Aminoacid::Leu, "UUG" => Aminoacid::Leu, "CUU" => Aminoacid::Leu, "CUC" => Aminoacid::Leu,
+    "CUA" => Aminoacid::Leu, "CUG" => Aminoacid::Leu,
     "UCU" => Aminoacid::Ser, "UCC" => Aminoacid::Ser, "UCA" => Aminoacid::Ser, "UCG" => Aminoacid::Ser, 
     "CCU" => Aminoacid::Pro, "CCC" => Aminoacid::Pro, "CCA" => Aminoacid::Pro, "CCG" => Aminoacid::Pro,
     "ACU" => Aminoacid::Thr, "ACC" => Aminoacid::Thr, "ACA" => Aminoacid::Thr, "ACG" => Aminoacid::Thr,
@@ -24,11 +25,13 @@ pub static CODON_TABLE: phf::Map<&'static str, Aminoacid> = phf_map! {
     "GAA" => Aminoacid::Glu, "GAG" => Aminoacid::Glu,
     "UGU" => Aminoacid::Cys, "UGC" => Aminoacid::Cys,
     "UGG" => Aminoacid::Trp,
+    "AUG" => Aminoacid::Met,
     "CGU" => Aminoacid::Arg, "CGC" => Aminoacid::Arg, "CGA" => Aminoacid::Arg, "CGG" => Aminoacid::Arg,
     "AGA" => Aminoacid::Arg, "AGG" => Aminoacid::Arg,
     "AGU" => Aminoacid::Ser, "AGC" => Aminoacid::Ser,
     "GGU" => Aminoacid::Gly, "GGC" => Aminoacid::Gly, "GGA" => Aminoacid::Gly, "GGG" => Aminoacid::Gly,
- 
+    "GUU" => Aminoacid::Val, "GUC" => Aminoacid::Val, "GUA" => Aminoacid::Val, "GUG" => Aminoacid::Val,
+    "AUC" => Aminoacid::Ile, "AUA" => Aminoacid::Ile,
     "UAA" => Aminoacid::Stop, "UAG" => Aminoacid::Stop, "UGA" => Aminoacid::Stop,
 };
 
