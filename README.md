@@ -45,10 +45,17 @@ fn main() {
 
 ## 2. Proteins
 ```rust
-let protein = proteins::Protein::new("ACDEFGHIKLMNPQRSTVWY");
-    println!("{}", protein.lenght()); //Lenght of the polypeptide chain
-    println!("{:?}", protein.from_string_to_vector()); //Convert the 1-letter-code polypeptide chain to a 3-letter-code vector
-    println!("{}", protein.protein_weight()); //Calculate the weight of the protein/polypeptide chain in Daltons
+use biorust::proteindir::proteins;
+
+fn main (){
+
+    let protein = proteins::Protein::new("ACDEFGHIKLMNPQRSTVWY");
+
+    println!("{}", protein.lenght());
+    println!("{:?}", protein.from_string_to_vector());
+    println!("{}", protein.protein_weight());
+
+}
 ```
 > #### Output
 >```bash
