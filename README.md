@@ -112,6 +112,9 @@ fn main() -> std::io::Result<()> {
 }
 ```
 ## 4. File CODEC
+Encoder: Takes bytes → extracts bit pairs → maps to nucleotides
+
+Decoder: Takes nucleotides → maps to bit pairs → reconstructs bytes
 ```rust
 use biorust::io::files;
 
