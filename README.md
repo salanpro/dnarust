@@ -6,6 +6,8 @@ A personal project which consists in a basic library for genomics and bioinforma
 # Features
 - [1. DNA](#1-dna)
 - [2. Proteins](#2-proteins)
+- [3. FASTA](#3-fasta)
+- [4. File CODEC](#4-file-codec)
 
 See [To-do list](#to-do-list) for current and futures features.
 
@@ -61,9 +63,75 @@ fn main (){
 >```bash
 >20
 >[Ala, Cys, Asp, Glu, Phe, Gly, His, Ile, Lys, Leu, Met, Asn, Pro, Gln, Arg, Ser, Thr, Val, Trp, Tyr]
->2395.7550000000006
+>2395.755
 >```
 
+## 3. FASTA
+### FASTA READER
+```rust
+use biorust::io::fasta;
+
+fn main() -> std::io::Result<()> {
+
+    let record1 = fasta::read_records("PATH TO FASTA FILE")?;
+    let record2 = fasta::read_records("PATH TO FASTA FILE")?;
+    let records = fasta::read_records("PATH TO FASTA FILE")?;
+
+
+    for record in &record2 {
+        println!("ID: {}", record.id);
+
+        if let Some(desc) = &record.description {
+            println!("Description: {}", desc);
+        }
+
+        println!("{}", record.sequence);
+    }
+
+    Ok(())
+}
+```
+### FASTA WRITER
+```rust
+use biorust::dnadir::dna::Sequence;
+use biorust::io::fasta;
+
+fn main() -> std::io::Result<()> {
+    let seq = Sequence::new("ATGGCCTAGCGATAA");
+    let seq2 = Sequence::new("GGATGCACGAGCA");
+
+    let record1 = fasta::FastaRecord::new("ID_1".to_string(), seq.clone());
+    let record2 = fasta::FastaRecord::new_wd("ID_2".to_string(), "Desc_2".to_string(), seq2.clone());
+
+    fasta::write_record("ouput1.fasta", &record1)?;
+    fasta::write_record("ouput2.fasta", &record2)?;
+    fasta::write_records("ouput3.fasta", &[record1, record2],
+    )?;
+
+    Ok(())
+}
+```
+## 4. File CODEC
+```rust
+use biorust::io::files;
+
+
+fn main()-> std::io::Result<()> {
+
+    let input_encoder = "assets/images.jpg";
+    let filename_encoder = "assets/prueba.dna";
+    let _ = files::encoder(input_encoder, filename_encoder);
+
+    let input_decoder = "assets/prueba.dna";
+    let filename_decoder = "assets/recovered.jpg";
+    let _ = files::decoder(input_decoder, filename_decoder);
+
+
+
+
+    Ok(())
+}
+```
 
  # To do list
  #### DNA
